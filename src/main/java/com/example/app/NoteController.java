@@ -36,7 +36,7 @@ public class NoteController {
 
     @PostMapping("/edit")
     public String editNote(@ModelAttribute Note note) {
-        noteService.update(note);
+        noteService.edit(note);
         return "redirect:/note/list";
     }
 

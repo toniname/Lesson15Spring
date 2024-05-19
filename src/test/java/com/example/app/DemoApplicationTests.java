@@ -53,7 +53,7 @@ class DemoApplicationTests {
 
         addedNote.setTitle("Updated Test Note");
         addedNote.setContent("This is an updated test note");
-        noteService.update(addedNote);
+        noteService.edit(addedNote);
 
         Note updatedNote = noteService.getById(addedNote.getId());
         assertEquals("Updated Test Note", updatedNote.getTitle());

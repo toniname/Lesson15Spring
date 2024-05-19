@@ -1,5 +1,6 @@
 package com.example.app;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -7,7 +8,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/note")
 public class NoteController {
-    private final NoteService noteService;
+
+    @Autowired
+    private NoteService noteService;
 
     public NoteController(NoteService noteService) {
         this.noteService = noteService;

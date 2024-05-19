@@ -15,25 +15,32 @@
     <title>Note List</title>
 </head>
 <body>
-<h1>Note List</h1>
-<table border="1">
-    <tr>
-        <th>Title</th>
-        <th>Content</th>
-        <th>Actions</th>
-    </tr>
-    <tr th:each="note : ${notes}">
-        <td th:text="${note.title}">Title</td>
-        <td th:text="${note.content}">Content</td>
-        <td>
-            <a th:href="@{/note/edit(id=${note.id})}">Edit</a>
-            <form th:action="@{/note/delete}" method="post" style="display:inline;">
-                <input type="hidden" name="id" th:value="${note.id}" />
-                <button type="submit">Delete</button>
-            </form>
-        </td>
-    </tr>
-</table>
-<a href="/note/edit?id=-1">Add New Note</a>
+<div class="container">
+    <h1>Note List</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="note : ${notes}">
+            <td th:text="${note.id}"></td>
+            <td th:text="${note.title}"></td>
+            <td th:text="${note.content}"></td>
+            <td>
+                <a th:href="@{/note/edit(id=${note.id})}" class="btn btn-primary">Edit</a>
+                <form th:action="@{/note/delete}" method="post" style="display:inline;">
+                    <input type="hidden" name="id" th:value="${note.id}">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

@@ -11,7 +11,7 @@ class DemoApplicationTests {
 
     @BeforeEach
     void setUp() {
-        noteService = new NoteService();
+        //noteService = new NoteService();
     }
 
     @Test

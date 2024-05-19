@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/note")
 public class NoteController {
+    private final NoteService noteService;
 
     @Autowired
-    private NoteService noteService;
-
     public NoteController(NoteService noteService) {
         this.noteService = noteService;
     }

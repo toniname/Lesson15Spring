@@ -3,9 +3,9 @@
 
   on:
     push:
-      branches: [ master2 ]
+      branches: [ main ]
     pull_request:
-      branches: [ master2 ]
+      branches: [ main ]
 
   jobs:
     build:
@@ -19,6 +19,7 @@
           with:
             java-version: '11'
             distribution: 'murine'
+
 
         - name: Grant execute permission for gradlew
           run: chmod +x ./gradlew

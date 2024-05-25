@@ -3,9 +3,9 @@
 
   on:
     push:
-      branches: [ toniname-patch-1 ]
+      branches: [ main ]
     pull_request:
-      branches: [ toniname-patch-1 ]
+      branches: [ main ]
 
   jobs:
     build:
@@ -26,4 +26,3 @@
 
         - name: Build and test with Gradle
           run: ./gradlew build
-          message: ++++Hello!!!+++++

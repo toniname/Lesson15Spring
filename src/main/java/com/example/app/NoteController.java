@@ -1,5 +1,6 @@
 package com.example.app;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public class NoteController {
     private final NoteService noteService;
 
+    @Autowired
     public NoteController(NoteService noteService) {
         this.noteService = noteService;
     }
@@ -34,7 +36,7 @@ public class NoteController {
 
     @PostMapping("/edit")
     public String editNote(@ModelAttribute Note note) {
-        noteService.update(note);
+        noteService.edit(note);
         return "redirect:/note/list";
     }
 

@@ -3,9 +3,9 @@
 
   on:
     push:
-      branches: [ master2 ]
+      branches: [ toniname-patch-1 ]
     pull_request:
-      branches: [ master2 ]
+      branches: [ toniname-patch-1 ]
 
   jobs:
     build:

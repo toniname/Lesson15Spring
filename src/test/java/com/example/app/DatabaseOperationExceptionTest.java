@@ -14,7 +14,7 @@ class DatabaseOperationExceptionTest {
     @Test
     void infoTest(){
 
-        log.info("hello");
+        log.info("HELLO");
     }
 
     @Test

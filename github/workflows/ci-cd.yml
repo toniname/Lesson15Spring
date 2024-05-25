@@ -19,6 +19,7 @@
           with:
             java-version: '11'
             distribution: 'murine'
+            message: ++++Hello!!!+++++
 
         - name: Grant execute permission for gradlew
           run: chmod +x ./gradlew

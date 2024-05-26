@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Arrays;
@@ -41,6 +42,7 @@ class DemoApplicationTests2 {
     }
 
     @Test
+    @WithMockUser(username = "user", roles = {"USER"})
     public void testListNotes() throws Exception {
         mockMvc.perform(get("/note/list"))
                 .andExpect(status().isOk())
@@ -49,6 +51,7 @@ class DemoApplicationTests2 {
     }
 
     @Test
+    @WithMockUser(username = "user", roles = {"USER"})
     public void testDeleteNote() throws Exception {
         mockMvc.perform(post("/note/delete")
                         .param("id", "1")
@@ -60,6 +63,7 @@ class DemoApplicationTests2 {
     }
 
     @Test
+    @WithMockUser(username = "user", roles = {"USER"})
     public void testEditNoteForm() throws Exception {
         mockMvc.perform(get("/note/edit")
                         .param("id", "1"))
@@ -69,6 +73,7 @@ class DemoApplicationTests2 {
     }
 
     @Test
+    @WithMockUser(username = "user", roles = {"USER"})
     public void testEditNote() throws Exception {
         Note note = new Note();
         note.setId(1L);
